@@ -10,7 +10,7 @@ app.use(cors());
 app.use(express.json());
 
 // Routes
-app.get('/api/questions', (req, res) => {
+app.get('https://mani-backend-401553303388.us-central1.run.app/api/questions', (req, res) => {
   // Return questions without correctAnswer property
   const safeQuestions = questions.map(({ id, question, options }) => ({
     id,
@@ -21,7 +21,7 @@ app.get('/api/questions', (req, res) => {
   res.json(safeQuestions);
 });
 
-app.post('/api/submit', (req, res) => {
+app.post('https://mani-backend-401553303388.us-central1.run.app/api/submit', (req, res) => {
   const { answers } = req.body;
   
   if (!answers || !Array.isArray(answers)) {

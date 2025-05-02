@@ -4,7 +4,7 @@ const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001';
 
 export const fetchQuestions = async (): Promise<Question[]> => {
   try {
-    const response = await fetch(`${API_URL}/api/questions`);
+    const response = await fetch(`https://mani-backend-401553303388.us-central1.run.app/api/questions`);
     if (!response.ok) {
       throw new Error('Failed to fetch questions');
     }
@@ -17,7 +17,7 @@ export const fetchQuestions = async (): Promise<Question[]> => {
 
 export const submitAnswers = async (answers: number[]): Promise<QuizResult> => {
   try {
-    const response = await fetch(`${API_URL}/api/submit`, {
+    const response = await fetch(`https://mani-backend-401553303388.us-central1.run.app/api/submit`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
